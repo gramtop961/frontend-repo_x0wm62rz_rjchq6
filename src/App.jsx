@@ -82,12 +82,22 @@ function Hero({ onOrder }) {
 
 function About() {
   return (
-    <section id="mi" className="relative min-h-[100svh] flex items-center">
+    <section id="mi" className="relative min-h-[100svh] flex items-center overflow-hidden">
+      {/* Creative background layers */}
+      <div className="bg-mesh" aria-hidden="true" />
+      <div className="bg-grid" aria-hidden="true" />
+      <div className="bg-noise" aria-hidden="true" />
+      <div className="scanlines" aria-hidden="true" />
+      <div className="orb orb-red float-slow" style={{ top: '10%', left: '-6%' }} />
+      <div className="orb orb-blue float-slow" style={{ bottom: '-6%', right: '5%' }} />
+
+      {/* Existing Ken Burns slider */}
       <div className="kenburns" aria-hidden="true">
         {aboutImages.map((src, i) => (
           <img loading="lazy" src={src} key={i} alt="about" />
         ))}
       </div>
+
       <div className="relative z-10 container-pad py-24">
         <div className="max-w-3xl">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">О нас</h2>
@@ -103,7 +113,9 @@ function About() {
 function Ticker() {
   const text = 'Маркетинг ≠ баннер. Ивент ≠ корпоратив. Комьюнити ≠ CRM. Бренд ≠ логотип. '
   return (
-    <section className="relative py-8 border-y" style={{borderColor:'var(--border)'}}>
+    <section className="relative py-8 border-y overflow-hidden" style={{borderColor:'var(--border)'}}>
+      <div className="angle-stripes" aria-hidden="true" />
+      <div className="glow-top" aria-hidden="true" />
       <div className="overflow-hidden">
         <div className="ticker">
           <div className="ticker-track text-2xl sm:text-3xl font-[var(--font-condensed)] uppercase">
@@ -171,13 +183,17 @@ function KsxRules() {
   }
 
   return (
-    <section className="container-pad py-24">
-      <div className="max-w-4xl">
+    <section className="relative container-pad py-24 overflow-hidden">
+      <div className="corner-accents" aria-hidden="true" />
+      <div className="bg-noise" aria-hidden="true" />
+      <div className="max-w-4xl relative z-10">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">правила кейсикс</h2>
         <p className="text-[var(--txt-med)] mb-6">Нажми кнопку, чтобы текст рассыпался и подчинялся гравитации. Нажми ещё раз — и всё вернётся на место.</p>
         <button className="btn-red" onClick={toggle}>Тыкни сюда</button>
-        <div className="mt-6 rounded-xl border" style={{borderColor:'var(--border)'}}>
-          <div ref={sceneRef} className="w-full" style={{height: 360}}/>
+        <div className="mt-6 rounded-xl border relative overflow-hidden" style={{borderColor:'var(--border)'}}>
+          <div className="bg-grid" aria-hidden="true" />
+          <div className="scanlines" aria-hidden="true" />
+          <div ref={sceneRef} className="w-full relative z-10" style={{height: 360}}/>
         </div>
       </div>
     </section>
@@ -194,7 +210,11 @@ function Services({ onOpen }) {
     { title: 'Design & Архитектура', img: '/media-placeholder.svg', modal: 616 },
   ]
   return (
-    <section id="uslugi" className="container-pad py-24">
+    <section id="uslugi" className="relative container-pad py-24 overflow-hidden">
+      <div className="bg-mesh" aria-hidden="true" />
+      <div className="bg-noise" aria-hidden="true" />
+      <div className="orb orb-red float-slow" style={{ top: '-4%', right: '5%' }} />
+      <div className="orb orb-violet float-slow" style={{ bottom: '-6%', left: '0%' }} />
       <h2 className="text-xl uppercase tracking-wider text-[var(--chrome)] mb-6">-УСЛУГИ</h2>
       <div className="grid-cards">
         {items.map((it, idx)=> (
@@ -214,8 +234,10 @@ function Services({ onOpen }) {
 
 function Philosophy() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_0%,rgba(255,26,26,.2),transparent)]" />
+      <div className="bg-grid" aria-hidden="true" />
+      <div className="bg-noise" aria-hidden="true" />
       <div className="relative container-pad">
         <p className="text-2xl sm:text-3xl leading-relaxed max-w-5xl">
           Мы <em className="italic text-[var(--chrome)]">работаем</em> на стыке бизнеса и искусства, технологий и улицы. Мы создаём смыслы, которые двигают бренды. Кейсикс — это место, где бренды становятся <em className="italic text-[var(--chrome)]">культурой</em>.
@@ -235,8 +257,10 @@ function Philosophy() {
 
 function Footer() {
   return (
-    <footer id="kontakty" className="container-pad py-16 border-t" style={{borderColor:'var(--border)'}}>
-      <div className="grid md:grid-cols-3 gap-8">
+    <footer id="kontakty" className="relative container-pad py-16 border-t overflow-hidden" style={{borderColor:'var(--border)'}}>
+      <div className="bg-vignette" aria-hidden="true" />
+      <div className="glow-top" aria-hidden="true" />
+      <div className="grid md:grid-cols-3 gap-8 relative z-10">
         <div>
           <img src="/keysiksagency_logo_white.svg" alt="Keysiks" className="h-8 w-auto mb-4" />
           <p className="text-[var(--txt-muted)]">© {new Date().getFullYear()} Keysiks agency</p>
@@ -260,9 +284,11 @@ function Footer() {
 
 function CasesClients() {
   return (
-    <section id="key" className="container-pad py-24">
-      <h2 className="text-3xl font-bold mb-6">Кейсы</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+    <section id="key" className="relative container-pad py-24 overflow-hidden">
+      <div className="bg-mesh" aria-hidden="true" />
+      <div className="bg-noise" aria-hidden="true" />
+      <h2 className="text-3xl font-bold mb-6 relative z-10">Кейсы</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 relative z-10">
         {Array.from({length:6}).map((_,i)=>(
           <div key={i} className="relative h-56 rounded-xl overflow-hidden">
             <img src={`/media-placeholder.svg`} alt="case" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
@@ -270,14 +296,15 @@ function CasesClients() {
           </div>
         ))}
       </div>
-      <h2 id="klienty" className="text-3xl font-bold mb-6">Клиенты</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+      <h2 id="klienty" className="text-3xl font-bold mb-6 relative z-10">Клиенты</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
         {Array.from({length:12}).map((_,i)=>(
           <div key={i} className="h-20 rounded-xl glass grid place-items-center">
             <span className="text-[var(--txt-med)]">Client {i+1}</span>
           </div>
         ))}
       </div>
+      <div className="bg-grid" aria-hidden="true" />
     </section>
   )
 }
