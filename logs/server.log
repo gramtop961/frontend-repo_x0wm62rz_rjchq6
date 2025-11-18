@@ -3,54 +3,7 @@
 > vite
 
 
-  VITE v5.4.20  ready in 254 ms
+  VITE v5.4.20  ready in 257 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.8.76:3000/
-2:44:02 PM [vite] Pre-transform error: Failed to resolve import "matter-js" from "src/App.jsx". Does the file exist?
-2:44:03 PM [vite] Internal server error: Failed to resolve import "matter-js" from "src/App.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /home/workspace/src/App.jsx:128:34
-  305|    const toggle = async () => {
-  306|      if (!running) {
-  307|        const Matter = await import("matter-js");
-     |                                    ^
-  308|        const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint } = Matter;
-  309|        const container = sceneRef.current;
-      at TransformPluginContext._formatError (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
-      at TransformPluginContext.error (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
-      at normalizeUrl (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
-      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
-      at async loadAndTransform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
-      at async viteTransformMiddleware (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
-2:44:22 PM [vite] Internal server error: Failed to resolve import "matter-js" from "src/App.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /home/workspace/src/App.jsx:128:34
-  305|    const toggle = async () => {
-  306|      if (!running) {
-  307|        const Matter = await import("matter-js");
-     |                                    ^
-  308|        const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint } = Matter;
-  309|        const container = sceneRef.current;
-      at TransformPluginContext._formatError (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
-      at TransformPluginContext.error (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
-      at normalizeUrl (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
-      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
-      at async loadAndTransform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
-      at async viteTransformMiddleware (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
-
-Could not open App.jsx in the editor.
-The editor process exited with an error: spawn vi ENOENT ('vi' command does not exist in 'PATH').
-
-
-Could not open App.jsx in the editor.
-The editor process exited with an error: spawn vi ENOENT ('vi' command does not exist in 'PATH').
-
