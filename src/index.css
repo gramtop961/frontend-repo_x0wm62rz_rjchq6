@@ -4,43 +4,65 @@
 
 @layer base {
   :root {
+    --bg: #0B0B0B;
+    --surf1: #121212;
+    --surf2: #1A1A1A;
+    --txt-hi: #F2F2F2;
+    --txt-med: #C9C9C9;
+    --txt-muted: #9B9B9B;
+    --txt-inv: #0B0B0B;
+    --pri: #FF1A1A;
+    --pri-h: #E01414;
+    --chrome: #C8CDD0;
+    --border: rgba(200, 205, 208, .35);
+
     --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-geist: 'Geist', system-ui, sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-    --font-mona: 'Mona Sans', system-ui, sans-serif;
-    --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
     --font-manrope: 'Manrope', system-ui, sans-serif;
+    --font-condensed: 'Roboto Condensed', system-ui, sans-serif;
   }
 
-  html {
-    font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  body {
-    @apply antialiased;
-  }
+  html { font-family: var(--font-sans); background: var(--bg); color: var(--txt-hi); }
+  body { @apply antialiased; }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Utilities */
 @layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
-  }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
-  }
+  .container-pad { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .btn-red { @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-transform duration-200; background: var(--pri); color: var(--txt-inv); box-shadow: 0 10px 30px rgba(255,26,26,.25); }
+  .btn-red:hover { transform: translateY(-2px) rotateX(7deg); background: var(--pri-h); box-shadow: 0 12px 40px rgba(255,26,26,.35); }
+  .btn-outline { @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium border transition-colors; border-color: var(--border); color: var(--txt-hi);} 
+  .btn-outline:hover { background: rgba(255,255,255,.04); }
+  .glass { backdrop-filter: blur(10px); background: rgba(18,18,18,.6); border: 1px solid var(--border); }
+  .grid-cards { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6; }
+  .card { @apply relative rounded-xl overflow-hidden transition-transform duration-200; transform-origin: center; }
+  .card:hover { transform: scale(0.9); }
+  .ticker { display:flex; gap:3rem; white-space:nowrap; }
+  .ticker-track { animation: marquee 30s linear infinite; }
 }
+
+/* Animations */
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Ken Burns */
+.kenburns {
+  position: absolute; inset: 0; overflow: hidden; z-index: 0;
+}
+.kenburns img { position: absolute; width: 110%; height: 110%; object-fit: cover; filter: brightness(.6); opacity: 0; animation: kenburns 48s linear infinite; }
+.kenburns img:nth-child(1) { animation-delay: 0s; }
+.kenburns img:nth-child(2) { animation-delay: 3s; }
+.kenburns img:nth-child(3) { animation-delay: 6s; }
+.kenburns img:nth-child(4) { animation-delay: 9s; }
+.kenburns img:nth-child(5) { animation-delay: 12s; }
+.kenburns img:nth-child(6) { animation-delay: 15s; }
+.kenburns img:nth-child(7) { animation-delay: 18s; }
+.kenburns img:nth-child(8) { animation-delay: 21s; }
+.kenburns img:nth-child(9) { animation-delay: 24s; }
+.kenburns img:nth-child(10){ animation-delay: 27s; }
+.kenburns img:nth-child(11){ animation-delay: 30s; }
+.kenburns img:nth-child(12){ animation-delay: 33s; }
+.kenburns img:nth-child(13){ animation-delay: 36s; }
+.kenburns img:nth-child(14){ animation-delay: 39s; }
+.kenburns img:nth-child(15){ animation-delay: 42s; }
+.kenburns img:nth-child(16){ animation-delay: 45s; }
+
+@keyframes kenburns { 0% { transform: scale(1) translate(0,0); opacity:0; } 5%{opacity:1;} 45% { transform: scale(1.1) translate(1%,1%); opacity:1; } 50% { opacity: 0; } 100% { opacity:0; } }
